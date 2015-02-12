@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'statuses/index'
-
-  get 'statuses/show'
-
-  get 'statuses/new'
+get 'statuses', to: 'statuses#index', page: 1
+get 'statuses/page/:page', to: 'statuses#index'
+get 'statuses/show'
+get 'statuses/new'
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -59,4 +59,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
